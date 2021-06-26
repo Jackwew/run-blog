@@ -1,19 +1,16 @@
 <template>
-  <div class="index">
-    <div class="home-header">
-      <headerCom></headerCom>
-    </div>
+  <div class="header">
+    {{ testMsg }}
   </div>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator'
-
-import headerCom from '@/components/header'
+import Logo from '~/components/Logo.vue'
 
 @Component({
   components: {
-    headerCom,
+    Logo,
   },
 })
 export default class IndexPage extends Vue {
@@ -48,15 +45,5 @@ export default class IndexPage extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
-.index {
-  width: 100%;
-  height: 100%;
-
-  .home-header {
-    width: 100%;
-    min-height: 100vh;
-    border: 1px solid #3b8070;
-  }
-}
+<style scoped lang="scss">
 </style>

@@ -1,29 +1,63 @@
 {
   "compilerOptions": {
-    "allowJs": true, // 允许编译javascript文件
-    "target": "esnext", // 编译目标平台
-    "lib": ["esnext", "esnext.asynciterable", "dom", "es5", "es2015.promise"],
+    "allowJs": true,
+    // 允许编译javascript文件
+    "target": "es6",
+    // 编译目标平台
+    "lib": [
+      "esnext",
+      "esnext.asynciterable",
+      "dom",
+      "es5",
+      "es2015.promise"
+    ],
     "baseUrl": ".",
     "declaration": true,
-    "removeComments": true, // 删除所有注释，但以复制权标题注释开头除外 /*!
-    "emitDecoratorMetadata": true, // 给源码里的装饰器声明加上设计类型元数据
-    "esModuleInterop": true, // 发布__importStar和生成器__importDefault兼容性，用于运行时babel生态系统兼容性，并支持--allowSyntheticDefaultImports类型系统兼容性。
-    "experimentalDecorators": true, // 启用实验性的ES装饰器
-    "module": "esnext", // 指定生成哪个模块系统代
-    "moduleResolution": "node", // 决定如何处理模块
-    "suppressImplicitAnyIndexErrors": true, // 抑制--noImplicitAny索引缺少索引签名的对象的错误
+    "removeComments": true,
+    // 删除所有注释，但以复制权标题注释开头除外 /*!
+    "emitDecoratorMetadata": true,
+    // 给源码里的装饰器声明加上设计类型元数据
+    "esModuleInterop": true,
+    // 发布__importStar和生成器__importDefault兼容性，用于运行时babel生态系统兼容性，并支持--allowSyntheticDefaultImports类型系统兼容性。
+    "experimentalDecorators": true,
+    // 启用实验性的ES装饰器
+    "module": "esnext",
+    // 指定生成哪个模块系统代
+    "moduleResolution": "node",
+    // 决定如何处理模块
+    "suppressImplicitAnyIndexErrors": true,
+    // 抑制--noImplicitAny索引缺少索引签名的对象的错误
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true, // //把 ts 文件编译成 js 文件的时候，同时生成对应的 map 文件
-    "strict": true, // 启用所有严格类型检查选项
-    "noImplicitThis": false, // this使用隐含any类型提高表达式的错误。
-    "noImplicitAny": false, // 在表达式和声明上有隐含的any类型时报错
-    "noEmit": true, // 不生成输出文件
-    "strictNullChecks": true, // Enable strict null checks.
+    "sourceMap": true,
+    // //把 ts 文件编译成 js 文件的时候，同时生成对应的 map 文件
+    "strict": true,
+    // 启用所有严格类型检查选项
+    "noImplicitThis": false,
+    // this使用隐含any类型提高表达式的错误。
+    "noImplicitAny": false,
+    // 在表达式和声明上有隐含的any类型时报错
+    "noEmit": true,
+    // 不生成输出文件
+    "strictNullChecks": true,
+    // Enable strict null checks.
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"]
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ]
     },
-    "types": ["@nuxt/types", "@types/node", "@nuxt/vue-app"]
+    "types": [
+      "@nuxt/types",
+      "@types/node",
+      "@nuxt/vue-app"
+    ],
+    "skipLibCheck": true
   },
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    ".nuxt",
+    "dist"
+  ]
 }

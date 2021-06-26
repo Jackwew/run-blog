@@ -10,24 +10,31 @@ module.exports = {
     // title: process.env.npm_package_name || '流年素写一世繁华',
     title: "流年素写一世繁华",
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {charset: "utf-8"},
+      {name: "viewport", content: "width=device-width, initial-scale=1"},
       {
         hid: "description",
         name: "description",
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{rel: "icon", type: "image/x-icon", href: "/favicon.ico"}]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#f00" },
+  loading: {color: "#f00"},
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    // 直接加载一个 Node.js 模块。（在这里它是一个 Sass 文件）
+    // 'bulma',
+    // // 项目里要用的 CSS 文件
+    // '@/assets/css/main.css',
+    // // 项目里要使用的 SCSS 文件
+    // '@/assets/css/main.scss'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -39,7 +46,7 @@ module.exports = {
     [
       "@nuxt/typescript-build",
       {
-        typeCheck: true,
+        typeCheck: false,
         ignoreNotFoundWarnings: true
       }
     ]
@@ -61,6 +68,7 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+    }
   }
 };
