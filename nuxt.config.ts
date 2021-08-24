@@ -10,15 +10,15 @@ module.exports = {
     // title: process.env.npm_package_name || '流年素写一世繁华',
     title: "流年素写一世繁华",
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {charset: "utf-8"},
+      {name: "viewport", content: "width=device-width, initial-scale=1"},
       {
         hid: "description",
         name: "description",
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{rel: "icon", type: "image/x-icon", href: "/favicon.ico"}],
     script: [
       {
         src: "/utils/bideo.js"
@@ -28,7 +28,7 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#f00" },
+  loading: {color: "#f00"},
   /*
    ** Global CSS
    */
@@ -43,7 +43,12 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    {
+      src: '@/plugins/iview',
+      ssr: true
+    },
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -73,6 +78,7 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+    }
   }
 };

@@ -8,7 +8,7 @@
 
  (function (global) {
 
-  // Define Bideo constructor on the global object
+  // Define Video constructor on the global object
   global.Bideo = function () {
 
     // Plugin options

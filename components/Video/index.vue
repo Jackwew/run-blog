@@ -4,7 +4,7 @@
     <video ref="background_video"
       class="background_video"
       loop
-      muted></video>
+      muted />
   </div>
 </template>
 <script lang="ts">

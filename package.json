@@ -15,7 +15,8 @@
     "cross-env": "^6.0.3",
     "koa": "^2.11.0",
     "nuxt": "^2.11.0",
-    "silent-film-player": "0.0.2"
+    "silent-film-player": "0.0.2",
+    "view-design": "^4.6.1"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.5.5",
