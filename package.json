@@ -16,7 +16,8 @@
     "koa": "^2.11.0",
     "nuxt": "^2.11.0",
     "silent-film-player": "0.0.2",
-    "view-design": "^4.6.1"
+    "view-design": "^4.6.1",
+    "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.5.5",
@@ -24,6 +25,7 @@
     "nodemon": "^2.0.2",
     "sass": "^1.35.1",
     "sass-loader": "^10.1.1",
+    "swiper": "^7.0.0",
     "vue-property-decorator": "^8.3.0"
   }
 }

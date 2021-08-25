@@ -39,6 +39,7 @@ module.exports = {
     // '@/assets/css/main.css',
     // // 项目里要使用的 SCSS 文件
     // '@/assets/css/main.scss'
+    // 'swiper/swiper-bundle.css'
   ],
   /*
    ** Plugins to load before mounting the App
@@ -47,6 +48,10 @@ module.exports = {
     {
       src: '@/plugins/iview',
       ssr: true
+    },
+    {
+      src: '@/plugins/swiper',
+      ssr: false
     },
   ],
   /*

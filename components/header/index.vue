@@ -20,8 +20,8 @@
         </a>
         <DropdownMenu slot="list">
           <DropdownItem>ZH-CN(简体中文)</DropdownItem>
-          <DropdownItem>ZH-CW(繁体中文)</DropdownItem>
-          <DropdownItem>USA</DropdownItem>
+          <DropdownItem disabled>ZH-CW(繁体中文)</DropdownItem>
+          <DropdownItem disabled>USA</DropdownItem>
         </DropdownMenu>
       </Dropdown>
     </div>
