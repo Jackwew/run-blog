@@ -110,7 +110,19 @@
     <section class="content-wrapper life">
       <div class="letter-title">MY INSTAGRAM FEED</div>
       <div class="big-title">我的生活以及随手拍</div>
+      <div v-swiper="swiperOption">
+        <div class="swiper-wrapper">
+          <template v-for="(item, index) in color">
+            <div class="swiper-slide" :style="{backgroundColor: item} ">
+              <img src="https://img.souutu.com/2019/1014/20191014093042529.jpg"/>
+            </div>
+          </template>
+        </div>
+        <!--        <div slot="pagination" class="swiper-pagination"></div>-->
+      </div>
     </section>
+    <foo-concat/>
+    <Footer/>
   </div>
 </template>
 
@@ -118,16 +130,38 @@
 import {Component, Vue} from 'vue-property-decorator'
 import headerCom from '~/components/header/index.vue'
 import Video from '@/components/Video/index.vue'
+import FooConcat from '@/components/foo-concat'
+import Footer from '@/components/footer'
+
 
 @Component({
   components: {
     headerCom,
     Video,
+    FooConcat,
+    Footer
   },
 })
+
 export default class IndexPage extends Vue {
+  swiperOption = { // 配置说明直接看官网
+    lazy: {
+      loadPrevNext: true
+    },
+    autoplay: {
+      delay: 2000,
+      stopOnLastSlide: false,
+      disableOnInteraction: false
+    },
+    slidesPerView: 3,
+    spaceBetween: 30,
+    centeredSlides: true,
+    loop: true,
+  }
+
   // 原data
   testMsg = 'My splendiferous Nuxt.js project'
+  color = ['green', 'blue', 'yellow']
   video_url =
     'https://htwz-wzy.obs.cn-north-4.myhuaweicloud.com/common/yutuweapp/material/20210627/f3d453eb97e04182a5adb55f3034ef00.mp4'
   // annotate refs type
@@ -501,9 +535,25 @@ export default class IndexPage extends Vue {
     .big-title {
       text-align: center;
       font-size: 40px;
-      margin-top: 15px;
+      margin: 15px 0;
     }
   }
-
 }
+</style>
+
+<style>
+.swiper-container {
+  width: 100%;
+  height: 200px;
+}
+
+.swiper-slide {
+  transition: 300ms;
+  transform: scale(0.8);
+}
+
+.swiper-slide-active, .swiper-slide-duplicate-active {
+  transform: scale(1);
+}
+
 </style>
