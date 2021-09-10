@@ -12,10 +12,10 @@
       </div>
     </div>
     <section class="content-wrapper person">
-      <div class="person-img">
+      <div class="person-img gs_reveal_fromLeft" ref="gs_reveal">
         <img src="@/assets/images/index/travel.jpg" alt="travel">
       </div>
-      <div class="person-info">
+      <div class="person-info gs_reveal_fromRight" ref="gs_reveal">
         <h2>My job is a front-end / full stack development</h2>
         <p>
           我目前是一名前端开发工程师, 主要工作地在四川 - 成都, 使用的技术有: <a>Html5</a>, <a>Css/Css3</a>, <a>Javascript</a>,
@@ -114,7 +114,7 @@
         <div class="swiper-wrapper">
           <template v-for="(item, index) in color">
             <div class="swiper-slide" :style="{backgroundColor: item} ">
-              <img src="https://img.souutu.com/2019/1014/20191014093042529.jpg"/>
+              <img src="https://pic.netbian.com/uploads/allimg/210827/235918-1630079958cd73.jpg" alt="error"/>
             </div>
           </template>
         </div>
@@ -132,6 +132,7 @@ import headerCom from '~/components/header/index.vue'
 import Video from '@/components/Video/index.vue'
 import FooConcat from '@/components/foo-concat'
 import Footer from '@/components/footer'
+import {registerGsap, test} from "~/utils/gsap";
 
 
 @Component({
@@ -166,9 +167,7 @@ export default class IndexPage extends Vue {
     'https://htwz-wzy.obs.cn-north-4.myhuaweicloud.com/common/yutuweapp/material/20210627/f3d453eb97e04182a5adb55f3034ef00.mp4'
   // annotate refs type
   $refs!: {
-    navBox: HTMLElement
-    validate: HTMLFormElement
-    video: HTMLFormElement
+    gs_reveal: HTMLElement
   }
   // active = 2
   // 计算属性
@@ -178,6 +177,8 @@ export default class IndexPage extends Vue {
 
   // 生命周期
   private mounted(): void {
+    console.log(12312)
+    registerGsap(this.$refs.gs_reveal)
   }
 
   private beforeDestroy(): void {

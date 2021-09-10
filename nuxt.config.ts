@@ -53,6 +53,10 @@ module.exports = {
       src: '@/plugins/swiper',
       ssr: false
     },
+    {
+      src: '@/plugins/vue-pdf',
+      ssr: false
+    }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -84,7 +88,13 @@ module.exports = {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
-    }
+      config.output.globalObject = 'this'
+      config.module.rules.push({
+        test: /\.pdf$/,
+        loader: 'url-loader'
+      })
+    },
+    transpile: ['gsap'],
   },
   buildDir: 'dist'
 };

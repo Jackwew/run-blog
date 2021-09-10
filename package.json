@@ -17,10 +17,12 @@
     "nuxt": "^2.11.0",
     "silent-film-player": "0.0.2",
     "view-design": "^4.6.1",
-    "vue-awesome-swiper": "^4.1.1"
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-pdf": "^4.3.0"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.5.5",
+    "gsap": "^3.7.1",
     "node-sass": "^6.0.1",
     "nodemon": "^2.0.2",
     "sass": "^1.35.1",
