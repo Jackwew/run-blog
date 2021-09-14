@@ -15,10 +15,14 @@
     "cross-env": "^6.0.3",
     "koa": "^2.11.0",
     "nuxt": "^2.11.0",
+    "pdfjs-dist": "^2.9.359",
     "silent-film-player": "0.0.2",
     "view-design": "^4.6.1",
     "vue-awesome-swiper": "^4.1.1",
-    "vue-pdf": "^4.3.0"
+    "vue-pdf": "^4.3.0",
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "babel-loader": "^8.2.2"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.5.5",

@@ -14,7 +14,7 @@
               @page-loaded="currentPage = $event"/>
           </a>
 
-          <div class="page-num">{{ item }}</div>
+          <div class="page-num">{{ item }} {{ show_pdf }}</div>
         </template>
 
       </div>
@@ -26,9 +26,9 @@
               :key="item"
               :src="src"
               :page="item"
-              @progress="loadedRatio = $event"
+              @progress="loadedRatio($event)"
               @num-pages="pdfPageCount = $event"
-              @page-loaded="currentPage = $event"/>
+              @page-loaded="pageLoaded = $event"/>
           </a>
         </div>
 
@@ -41,8 +41,9 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator'
-import headerCom from '@/components/header'
+import headerCom from '@/components/header/index.vue'
 //@ts-ignore
+
 
 @Component({
   components: {
@@ -52,14 +53,16 @@ import headerCom from '@/components/header'
 
 
 export default class IndexPage extends Vue {
+
   numPages = 0
   current = 1
-  loadedRatio = 0
-  vuePdf = null
-  src = 'https://htwz-wzy.obs.cn-north-4.myhuaweicloud.com/run-test/test_pdf.pdf'
+  vuePdf: any = null
+  show_pdf = false
+  src = 'https://htwz-wzy.obs.cn-north-4.myhuaweicloud.com/run-test/test.pdf'
 
   // 生命周期
   private mounted(): void {
+
     if (process.client) {
       this.vuePdf = require('vue-pdf')
       const pdfLoader = this.vuePdf.default.createLoadingTask(this.src)
@@ -77,12 +80,8 @@ export default class IndexPage extends Vue {
 
   }
 
-  go_blog = () => {
-    console.log(1213);
-
-  }
-  activePage = (id) => {
-    this.current = id
+  loadedRatio = (e) => {
+    console.warn(e)
   }
 }
 </script>

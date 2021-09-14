@@ -1,14 +1,13 @@
 <template>
   <div class="header">
-    <div class="logo">RW</div>
+    <router-link to="/" class="logo">RW</router-link>
     <ul class="menu-list">
-      <li>推荐</li>
-      <li>前端</li>
-      <li>后端</li>
-      <li>简历</li>
-      <li>开发工具</li>
-      <li>程序员的门</li>
-      <li>关于</li>
+      <router-link :class="`list-item ${currenName === 'index' ? 'active-item' : ''}`" to="/">推荐</router-link>
+      <router-link :class="`list-item ${currenName === 'blog' ? 'active-item' : ''}`" to="/blog">博客</router-link>
+      <router-link :class="`list-item ${currenName === 'resume' ? 'active-item' : ''}`" to="/resume">简历</router-link>
+      <router-link :class="`list-item ${currenName === '/' ? 'active-item' : ''}`" to="">开发工具</router-link>
+      <router-link :class="`list-item ${currenName === '/' ? 'active-item' : ''}`" to="">程序员的门</router-link>
+      <router-link :class="`list-item ${currenName === '/about' ? 'active-item' : ''}`" to="/about">关于</router-link>
     </ul>
     <div class="tools">
       <Icon class="search" type="ios-search" color="#fff" size="24"/>
@@ -40,6 +39,7 @@ import Logo from '~/components/Logo.vue'
 export default class IndexPage extends Vue {
   // 原data
   testMsg = 'My splendiferous Nuxt.js project'
+  currenName = ''
   // annotate refs type
   $refs!: {
     navBox: HTMLElement
@@ -53,7 +53,7 @@ export default class IndexPage extends Vue {
 
   // 生命周期
   private mounted(): void {
-    // console.log(this.$router)
+    this.currenName = this.$route.name
   }
 
   private beforeDestroy(): void {
@@ -148,15 +148,17 @@ export default class IndexPage extends Vue {
     justify-content: center;
     align-items: center;
     padding: 0 200px;
+    color: #fff;
     font-family: PingFangSC-Regular, sans-serif;
 
-    li {
+    .list-item {
       cursor: pointer;
       font-size: 16px;
       font-weight: 500;
       margin: 0 15px;
       padding: 8px 2px;
       position: relative;
+      color: #fff;
 
       &:hover {
         &::after {
@@ -180,6 +182,10 @@ export default class IndexPage extends Vue {
         transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
         transition-duration: 0.6s;
       }
+    }
+
+    .active-item::after {
+      width: 100%;
     }
   }
 
